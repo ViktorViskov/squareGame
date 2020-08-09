@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Квадрати v. 1.0</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-        
-</body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h2 class="gameName">Квадрати</h2>
+      <p class="gameTitle">
+        Вам потрібно натискати на квадрати і набрати х кількість балів за х
+        спроб
+      </p>
+      <nav class="nav">
+        <button class="btn newGame">Нова гра</button>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <div class="container"></div>
+    </div>
+    <footer class="footer">
+      <div class="display">
+        <div class="item">
+          <h3 class="title">
+            Залишилось спроб
+          </h3>
+          <h3 class="title">
+            <span class="attemps">10</span>
+            /
+            <span class="maxAttemps">10</span>
+          </h3>
+        </div>
+        <div class="item">
+          <h3 class="title">
+            Набрано балів
+          </h3>
+          <h3 class="title">
+            <span class="score">0</span>
+            /
+            <span class="maxScore">200</span>
+          </h3>
+        </div>
+      </div>
+    </footer>
+    <script src="./jsCode.js" type="module"></script>
+  </body>
 </html>

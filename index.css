@@ -1,4 +1,7 @@
-body, h2 {
+* {
+  box-sizing: border-box; }
+
+body {
   margin: 0;
   padding: 0; }
 
@@ -13,3 +16,53 @@ a {
 
 body {
   font-family: sans-serif; }
+
+.header {
+  text-align: center; }
+  .header .nav {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 16px; }
+    .header .nav .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #6dc8ec;
+      font-size: 20px;
+      outline: none;
+      transition: background-color 0.3s linear; }
+      .header .nav .btn:hover {
+        background-color: #b7e5fa; }
+      .header .nav .btn:active {
+        color: #616161; }
+
+.container .row {
+  display: flex;
+  justify-content: center; }
+  .container .row .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px; }
+  .container .row .one {
+    background-color: #9fc5e8ff; }
+  .container .row .two {
+    background-color: #a2c4c9ff; }
+  .container .row .five {
+    background-color: #b6d7a8ff; }
+  .container .row .ten {
+    background-color: #f9cb9cff; }
+  .container .row .fifty {
+    background-color: #dd7e6bff; }
+  .container .row .uknown {
+    background-color: #fff; }
+  .container .row .uknown::after {
+    content: "?"; }
+
+.footer .display {
+  display: flex;
+  justify-content: center; }
+  .footer .display .item {
+    padding: 0 30px;
+    text-align: center; }
