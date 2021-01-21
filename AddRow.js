@@ -1,52 +1,52 @@
 import { AddItem } from './AddItem.js';
 export class AddRow {
   constructor(mp, elements) {
-    // массив для випадкового числа
+    // Array with random numbers
     this.arr = [1, 2, 5, 10, 50];
 
-    // створєюмо рядки з елементами
+    // create rows with elements
     this.mkRows(mp, elements);
 
   }
 
-  // знайти випадкове число 0-4 і повернення числа за індексу з массиву
+  // get and return number from array
   mkRandomNr() {
-    return this.arr[Math.floor(Math.random() * 5)];
+    return this.arr[Math.floor(Math.random() * this.arr.length)];
   }
 
 
-  // створення тегу і додавання класів
+  // create tags and add classes
   mkTag(tagName, ...classes) {
-    // робимо елемент
+    // create tag
     let tag = document.createElement(tagName);
 
-    // додаємо класси
+    // add classes
     for (let className of classes) {
       tag.classList.add(className);
     }
 
-    // повертаємо елемент
+    // return tag
     return tag;
   }
 
 
-  // цикл з створенням рядків
+  // loop for creating rows
   mkRows(mp, elements) {
     for (let i = 0; i < elements; i++) {
 
-      // створення тегу рядок
+      // create tag row
       this.row = this.mkTag("div", "row");
 
-      // створюємо і додаємо елементи в рядок
+      // create and add elements (squares) in row
       this.mkItems(this.row, elements);
 
-      // монтуємо рядок
+      // mount row
       mp.appendChild(this.row);
     }
   }
 
 
-  // цикл з створенням елементів і додаванням в рядок
+  // loop for creating element and add to row
   mkItems(mp, elements) {
     for (let i = 0; i < elements; i++) {
       new AddItem(this.row, this.mkRandomNr());
