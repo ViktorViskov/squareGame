@@ -1,14 +1,14 @@
 export class AddItem {
-  // запуск коду при створенні класу
+  // constructor for class
   constructor(mp, point) {
-    // обробка данних
+    // adding scores for squares and unlock game
     this.makePoint(point);
     this.obj = this.searchingItems();
 
-    // створюємо елемент
+    // create square tag and adding classes
     this.item = this.mkTag("div", "item", "uknown");
 
-    // додаємо обробку подій
+    // add event to square
     this.item.addEventListener(
       "click",
       () => {
@@ -17,49 +17,49 @@ export class AddItem {
       false
     );
 
-    // монтуємо елемент
+    // mounting square
     mp.appendChild(this.item);
   }
 
-  // створення тегу і додавання класів
+  // function for creating tag and adding classes
   mkTag(tagName, ...classes) {
-    // робимо елемент
+    // create tag
     let tag = document.createElement(tagName);
 
-    // додаємо класси
+    // add classes
     for (let className of classes) {
       tag.classList.add(className);
     }
 
-    // повертаємо елемент
+    // return tag
     return tag;
   }
 
-  // логіка натиску (зменшення спроб додавання балів відкриття і блокування елементу)
+  // game logick (reducing attempts to add points to open and lock an item)
   btnLogik() {
     if (this.checkAttemps() && this.isAvaible) {
-      // зменшення спроб
+      // reduction of attempts
       this.attemps.textContent--;
 
-      // додавання балів
+      // adding points
       this.score.textContent = this.point + Number(this.score.textContent);
 
-      // відкриття очків
+      // opening points
       this.item.textContent = this.point;
 
-      // додаємо відповідний класс
+      // add the appropriate class for change interface
       this.item.classList.add(this.pointClass);
 
-      // видалення классу для скриття
+      // remove the class that hid the square
       this.item.classList.remove("uknown");
 
-      // блокування на повторне використання
+      // reuse lock
       this.isAvaible = false;
       
     }
   }
 
-  // пошук елементів для виведення результатів (спроби і бали)
+  // search for elements to display results (attempts and points)
   searchingItems() {
     this.attemps = document.querySelector(".attemps");
     this.maxAttemps = document.querySelector(".maxAttemps");
@@ -68,13 +68,13 @@ export class AddItem {
     this.maxScore = document.querySelector(".maxScore");
   }
 
-  // перевірка на кількість спроб
+  // check for the number of attempts
   checkAttemps() {
     let attemps = document.querySelector(".attemps");
     return Number(attemps.textContent) > 0 ? true : false;
   }
 
-  // створення балів на елемент запис елементу isAvaible
+  // create points and unlock element
   makePoint(point) {
     this.isAvaible = true;
     switch (point) {

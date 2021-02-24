@@ -1,11 +1,11 @@
 import { AddRow } from "./AddRow.js";
 
-// запуск гри
+// start game
 function newGame() {
-  // пошук точки монтування
+  // search mp (mount point)
   let container = document.querySelector(".container");
 
-  // якщо брехня створюємо новий і монтуємо в обгортку
+  // if not mp not found, create new
   if (!container) {
     let wrapper = document.querySelector(".wrapper");
 
@@ -22,7 +22,7 @@ function newGame() {
     let attemps = document.querySelector(".attemps")
     attemps.textContent = 10;
   }
-  // інакше видаляємо і створюємо новий і монтуємо в обгортку обновляємо результати гри
+  // else remove current and create new, after mount wrapper and update game result
   else {
     container.remove();
 
@@ -45,7 +45,7 @@ function newGame() {
 
 
 
-// обробка подій
+// add event
 let btn = document.querySelector(".newGame");
 
 btn.addEventListener("click", () => {newGame()});
